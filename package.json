@@ -11,8 +11,7 @@
   },
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest",
-    "precommit": "NODE_ENV=production lint-staged"
+    "test": "jest"
   },
   "dependencies": {
     "lodash": "^4.17.11",
@@ -49,5 +48,10 @@
   },
   "jest": {
     "preset": "react-native"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "NODE_ENV=production lint-staged"
+    }
   }
 }
