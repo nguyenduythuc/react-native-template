@@ -22,8 +22,7 @@ const persistedReducer = persistCombineReducers(persistConfig, rootReducer)
 const sagaMiddleware = createSagaMiddleware()
 const navMiddleware = createReactNavigationReduxMiddleware(
   'template',
-  state => {console.log('abc', state)
-     return state.navState},
+  state => state.navState,
 );
 
 export function configStore() {

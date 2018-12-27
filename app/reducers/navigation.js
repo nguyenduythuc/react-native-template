@@ -7,7 +7,6 @@
 import AppNavigator from '../navigations'
 
 export const navState = (state, action) => {
-  console.log(AppNavigator)
   switch (action.type) {
     default:
       if (action.type === 'Navigation/NAVIGATE') {
