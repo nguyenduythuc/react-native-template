@@ -9,7 +9,8 @@
 import React, {Component} from 'react'
 import {Platform, StyleSheet, Text, View} from 'react-native'
 import { addNavigationHelpers } from 'react-navigation'
-import { AppNavigator } from '../navigations'
+import AppNavigator from '../store'
+import { connect } from 'react-redux'
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -18,23 +19,15 @@ const instructions = Platform.select({
     'Shake or press menu button for dev menu',
 });
 
-type Props = {};
-export default class App extends Component<Props> {
+class App extends Component<Props> {
   render() {
-    return (
-      <View style={styles.container}>
-        <AppNavigator />
-      </View>
-    );
+    return <AppNavigator />
   }
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    flex: 1
   },
   welcome: {
     fontSize: 20,
@@ -47,3 +40,12 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
 });
+
+const mapStateToProps = state => {
+  const { navState } = state;
+  return {
+    navState
+  };
+};
+
+export default connect(mapStateToProps)(App);

@@ -10,6 +10,7 @@ const { store, persistor } = configStore()
 export default class App extends Component {
   render() {
     store.dispatch(testRedux())
+    console.log(store.getState());
     return(
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
