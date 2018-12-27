@@ -1,16 +1,19 @@
-import React, { Component } from 'react'
-import { View } from 'react-native'
-import { PersistGate } from 'redux-persist/integration/react'
-import { Provider } from 'react-redux'
-import { configStore } from './store/index'
-import RootScreen from './screens/root'
-import { testRedux } from './actions/debug'
-const { store, persistor } = configStore()
+import React, { PureComponent } from 'react';
+import { PersistGate } from 'redux-persist/integration/react';
+import { Provider } from 'react-redux';
+import { configStore } from './store/index';
+import RootScreen from './screens/root';
+import { testRedux } from './actions/debug';
 
-export default class App extends Component {
+const { store, persistor } = configStore();
+
+export default class App extends PureComponent {
+  componentDidMount() {
+    store.dispatch(testRedux());
+  }
+
   render() {
-    store.dispatch(testRedux())
-    return(
+    return (
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
           <RootScreen />
@@ -18,4 +21,4 @@ export default class App extends Component {
       </Provider>
     );
   }
-};
+}

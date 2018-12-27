@@ -1,5 +1,3 @@
-'use strict';
-
 const Types = {
   TEST: 'TEST',
   SAVEDEBUG: 'SAVEDEBUG'

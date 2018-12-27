@@ -2,10 +2,9 @@
  * @flow
  */
 
-'use strict';
+import AppNavigator from '../navigations';
 
-import AppNavigator from '../navigations'
-
+/* eslint-disable import/prefer-default-export */
 export const navState = (state, action) => {
   switch (action.type) {
     default:

@@ -2,14 +2,12 @@
  * @flow
  */
 
-'use strict';
-
 import { delay } from 'redux-saga';
-import { put, select } from 'redux-saga/effects';
+import { put } from 'redux-saga/effects';
 import { saveDebug } from '../actions/debug';
-
-export function* debug(action) {
+/* eslint-disable import/prefer-default-export */
+export function* debug() {
   yield delay(300);
-  const { debug } = yield select();
-  yield put(saveDebug())
+  // const { debug } = yield select();
+  yield put(saveDebug());
 }

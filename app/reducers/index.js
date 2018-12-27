@@ -1,6 +1,6 @@
-import { reducer as formReducer } from 'redux-form'
-import { debug } from './debug'
-import { navState } from './navigation'
+import { reducer as formReducer } from 'redux-form';
+import { debug } from './debug';
+import { navState } from './navigation';
 
 const rootReducer = {
   form: formReducer,
@@ -8,4 +8,4 @@ const rootReducer = {
   navState
 };
 
-export default rootReducer
+export default rootReducer;
