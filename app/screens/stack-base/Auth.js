@@ -44,6 +44,7 @@ const styles = StyleSheet.create({
 export default class Auth extends PureComponent {
   componentDidMount() {
     const navState = this.props;
+    /* eslint-disable no-console */
     console.log(navState);
   }
 

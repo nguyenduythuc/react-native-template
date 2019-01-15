@@ -13,6 +13,7 @@ import AppNavigator from '../store';
 class App extends PureComponent {
   componentDidMount() {
     const navState = this.props;
+    /* eslint-disable no-console */
     console.log(navState);
   }
 

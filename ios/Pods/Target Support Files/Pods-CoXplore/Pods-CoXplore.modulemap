@@ -1,0 +1,6 @@
+framework module Pods_CoXplore {
+  umbrella header "Pods-CoXplore-umbrella.h"
+
+  export *
+  module * { export * }
+}
